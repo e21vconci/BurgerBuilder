@@ -18,7 +18,8 @@ import * as actions from '../../store/actions/index';
 //     bacon: 0.7
 // };
 
-class BurgerBuilder extends Component {
+// Utilizziamo export per il test del componente  
+export class BurgerBuilder extends Component {
     // constructor(props) {
     //     super(props);
     //     this.state = {...}
