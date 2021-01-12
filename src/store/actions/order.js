@@ -22,12 +22,12 @@ export const purchaseBurgerStart = () => {
     };
 };
 
-export const purchaseBurger = ( orderData ) => {
+export const purchaseBurger = ( orderData, token ) => {
     return dispatch => {
         dispatch(purchaseBurgerStart());
-        axios.post( '/orders.json', orderData ) // URL firebase a cui inviare la richiesta
+        axios.post( '/orders.json?auth=' + token, orderData ) // URL firebase a cui inviare la richiesta
             .then( response => {
-                console.log( response.data );
+                //console.log( response.data );
                 dispatch( purchaseBurgerSuccess( response.data.name, orderData ) );
             })
             .catch( error => {
@@ -62,10 +62,12 @@ export const fetchOrdersStart = () => {
     };
 };
 
-export const fetchOrders = () => {
+export const fetchOrders = ( token, userId ) => {
     return dispatch => {
         dispatch( fetchOrdersStart() );
-        axios.get( '/orders.json' )
+        // visualizzare gli ordini di uno specifico utente
+        const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"'; 
+        axios.get( '/orders.json' + queryParams )
             .then( res => {
                 //console.log( res.data );
                 const fetchedOrders = [];

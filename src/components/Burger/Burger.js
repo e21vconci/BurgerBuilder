@@ -5,7 +5,7 @@ import classes from './Burger.css'
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const burger = ( props ) => {
-    console.log(props);
+    //console.log(props);
     let transformedIngredients = Object.keys( props.ingredients ) // estrae le chiavi di un dato oggetto e lo trasforma in un array, quindi fornisce un array di chiavi.
     .map( igKey => {
         return [...Array( props.ingredients[igKey] )].map(( _, i ) => {
