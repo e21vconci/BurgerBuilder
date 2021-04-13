@@ -58,35 +58,6 @@ export const auth = (email, password, isSignup) => {
         password: password,
         isSignup: isSignup
     };
-    // return dispatch => {
-    //     dispatch(authStart());
-    //     const authData = {
-    //         email: email,
-    //         password: password,
-    //         returnSecureToken: true
-    //     };
-    //     let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyByKftZr_8Ey-x5SihGEtiOODCwDZKOhfQ';
-    //     if (!isSignup) {
-    //         url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyByKftZr_8Ey-x5SihGEtiOODCwDZKOhfQ';
-    //     }
-    //     // API_KEY va sostituita con quella del progetto firebase (panoramica del progetto)
-    //     axios.post(url, authData)
-    //         .then(response => {
-    //             //console.log(response);
-    //             // scedenza token
-    //             const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
-    //             // memorizzo il token nella memoria locale del browser
-    //             localStorage.setItem('token', response.data.idToken);
-    //             localStorage.setItem('expirationDate', expirationDate);
-    //             localStorage.setItem('userId', response.data.localId);
-    //             dispatch(authSuccess(response.data.idToken, response.data.localId));
-    //             // per il logout
-    //             dispatch(checkAuthTimeout(response.data.expiresIn));
-    //         })
-    //         .catch(err => {
-    //             dispatch(authFail(err.response.data.error));
-    //         });
-    // };
 };
 
 export const setAuthRedirectPath = ( path ) => {
