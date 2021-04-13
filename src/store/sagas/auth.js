@@ -30,9 +30,9 @@ export function* authUserSaga(action) {
         returnSecureToken: true
     };
     // API_KEY va sostituita con quella del progetto firebase (panoramica del progetto)
-    let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyByKftZr_8Ey-x5SihGEtiOODCwDZKOhfQ';
+    let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
     if (!action.isSignup) {
-        url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyByKftZr_8Ey-x5SihGEtiOODCwDZKOhfQ';
+        url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
     }
     try {
         // la Promise viene ora gestita in questo modo 
