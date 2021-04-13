@@ -51,9 +51,9 @@ export const auth = (email, password, isSignup) => {
             password: password,
             returnSecureToken: true
         };
-        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyByKftZr_8Ey-x5SihGEtiOODCwDZKOhfQ';
+        let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
         if (!isSignup) {
-            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyByKftZr_8Ey-x5SihGEtiOODCwDZKOhfQ';
+            url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
         }
         // API_KEY va sostituita con quella del progetto firebase (panoramica del progetto)
         axios.post(url, authData)
